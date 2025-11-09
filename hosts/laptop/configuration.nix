@@ -8,22 +8,9 @@
     "/nix/var/nix/profiles/per-user/root/channels"
   ];
 
-  
+  networking.hostName = "laptop"; # Define your hostname.
+  hardware.enableAllFirmware = true;  
   hardware.bluetooth.enable = true;
-
-  # Enable the X11 windowing system.
-  # Enable the GNOME Desktop Environment.
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -39,7 +26,6 @@
 
   # --- networking
   networking.networkmanager.enable = true;
-  networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

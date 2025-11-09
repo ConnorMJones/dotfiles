@@ -9,6 +9,7 @@
   outputs = { self, nixpkgs }:
   let 
     shared = [
+      ./modules/browsers/firefox.nix
       ./modules/apps.nix
       ./modules/audio.nix
       ./modules/bootloader.nix
@@ -16,7 +17,6 @@
       ./modules/dev.nix
       ./modules/locale.nix
       ./modules/niri.nix
-      #./modules/browser.nix
       ./modules/shell.nix
       ./modules/users.nix
     ];
@@ -33,6 +33,8 @@
             ./hosts/laptop/configuration.nix
             ./hosts/laptop/hardware-configuration.nix
             ./modules/nvidia.nix
+            ./modules/typst.nix
+            ./modules/xserver.nix
           ];
         };
       };
