@@ -34,6 +34,7 @@
           modules = shared ++ [
             ./hosts/laptop/configuration.nix
             ./hosts/laptop/hardware-configuration.nix
+            ./modules/decor/stylix.nix
             ./modules/nvidia.nix
             ./modules/steam.nix
             ./modules/typst.nix

@@ -11,28 +11,27 @@
         desktop = 1.0;
         popups = 1.0;
     };
-    sizes = {
-        applications = 12;
-        terminal = 15;
-        desktop = 10;
-        popups = 10;
-    };
     # https://nixos.wiki/wiki/Fonts
     fonts = {
         monospace = {
-            package = pkgs.nerdfonts.override {fonts = ["Iosevka"];};
+            package = pkgs.nerd-fonts.iosevka;
             name = "Iosevka";
         };
         sansSerif = {
-            package = pkgs.nerdfonts.override {fonts = ["DejaVu Sans"];};
-            # package = pkgs.dejavu_fonts;
+            package = pkgs.dejavu_fonts;
             name = "DejaVu Sans";
         };
         serif = {
-            package = pkgs.nerdfonts.override {fonts = ["DejaVu Serif"];};
-            # package = pkgs.dejavu_fonts;
+            package = pkgs.dejavu_fonts;
             name = "DejaVu Serif";
         };
+        sizes = {
+            applications = 12;
+            terminal = 15;
+            desktop = 10;
+            popups = 10;
+        };
+
     };
   };
 
