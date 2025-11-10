@@ -1,15 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  # Fix nix path
-  nix.nixPath = [
-    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
-    "nixos-config=/.dotfiles/hosts/laptop/configuration.nix"
-    "/nix/var/nix/profiles/per-user/root/channels"
+  environment.systemPackages = [
+    pkgs.linuxKernel.packages.linux_5_15.rtw89
   ];
+  hardware.usb-modeswitch.enable = true;
 
   networking.hostName = "laptop"; # Define your hostname.
-  hardware.enableAllFirmware = true;  
+  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
