@@ -35,24 +35,23 @@
     };
   };
 
-  # SAGA
   # https://tinted-theming.github.io/tinted-gallery/
   stylix.base16Scheme = {
-    base00 = "05080a"; # Obsidian
-    base01 = "0a1014"; # Liquorice
-    base02 = "0f181e"; # Charcoal
-    base03 = "141f27"; # Asphalt
-    base04 = "192630"; # Gunmetal
-    base05 = "dce2f7"; # Marshmallow
-    base06 = "f8eae7"; # Linen
-    base07 = "ccd3fe"; # Lavender
-    base08 = "ffd4e9"; # Azalea
-    base09 = "fbcbae"; # Apricot
-    base0A = "fbebc8"; # Blond
-    base0B = "f7ddff"; # Lace
-    base0C = "c5edc1"; # Tea
-    base0D = "c9fff7"; # Celeste
-    base0E = "dcc3f9"; # Anemone
-    base0F = "f6dddd"; # Lycoris
+    base00 = "#061229";
+    base01 = "#2a3448";
+    base02 = "#4d5666";
+    base03 = "#717885";
+    base04 = "#9a99a3";
+    base05 = "#b8bbc2";
+    base06 = "#dbdde0";
+    base07 = "#ffffff";
+    base08 = "#d07346";
+    base09 = "#f0a000";
+    base0A = "#fbd461";
+    base0B = "#99bf52";
+    base0C = "#72b9bf";
+    base0D = "#5299bf";
+    base0E = "#9989cc";
+    base0F = "#b08060";
   };
 }

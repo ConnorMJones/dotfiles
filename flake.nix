@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, stylix, ... }:
   let 
-    shared = [
+    common = [
       ./modules/browsers/firefox.nix
       ./modules/apps.nix
       ./modules/audio.nix
@@ -23,21 +23,17 @@
       ./modules/users.nix
     ];
   in
-  {
-
-    # packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-    # packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-  
+  {  
     nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = shared ++ [
+          modules = common ++ [
             ./hosts/laptop/configuration.nix
             ./hosts/laptop/hardware-configuration.nix
             ./modules/decor/stylix.nix
             ./modules/nvidia.nix
-            ./modules/steam.nix
             ./modules/typst.nix
+            ./modules/gnome.nix
             ./modules/xserver.nix
             stylix.nixosModules.stylix
           ];
