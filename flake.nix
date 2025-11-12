@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, stylix, ... }:
+  outputs = { self, nixpkgs, stylix, ... } @ glb:
   let 
     common = [
       ./modules/browsers/firefox.nix
@@ -27,6 +27,8 @@
     nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          # access anything else in ... from glb build wide
+          specialArgs = glb;
           modules = common ++ [
             ./hosts/laptop/configuration.nix
             ./hosts/laptop/hardware-configuration.nix

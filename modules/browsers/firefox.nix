@@ -1,49 +1,49 @@
 { ... }:
 {
-    programs.firefox = {
-        enable = true;
+  programs.firefox = {
+    enable = true;
 
-        # about:policies
-        policies = {
-            # Disable Firefox Sync.
-            DisableFirefoxAccounts = true;
-            # Disable the option to "Set as Desktop Background" when right-clicking
-            # on an image.
-            DisableSetDesktopBackground = true;
-            DisableTelemetry = true;
-            DontCheckDefaultBrowser = true;
-            # Disable Generative AI features.
-            GenerativeAI = {
-                Enabled = false;
-                Chatbot = false;
-                LinkPreviews = false;
-                TabGroups = false;
-                Locked = true;
-            };
-            # Disable autofill.
-            AutofillAddressEnabled = false;
-            AutofillCreditCardEnabled = false;
+    # about:policies
+    policies = {
+      # Disable Firefox Sync.
+      DisableFirefoxAccounts = true;
+      # Disable the option to "Set as Desktop Background" when right-clicking
+      # on an image.
+      DisableSetDesktopBackground = true;
+      DisableTelemetry = true;
+      DontCheckDefaultBrowser = true;
+      # Disable Generative AI features.
+      GenerativeAI = {
+        Enabled = false;
+        Chatbot = false;
+        LinkPreviews = false;
+        TabGroups = false;
+        Locked = true;
+      };
+      # Disable autofill.
+      AutofillAddressEnabled = false;
+      AutofillCreditCardEnabled = false;
 
-            # Only allow HTTPS.
-            HttpsOnlyMode = "force_enabled";
-            # Disable DNS prefetching.
-            NetworkPrediction = false;
-            # Disable the new tab page.
-            NewTabPage = false;
+      # Only allow HTTPS.
+      HttpsOnlyMode = "force_enabled";
+      # Disable DNS prefetching.
+      NetworkPrediction = false;
+      # Disable the new tab page.
+      NewTabPage = false;
 
-            # Do not offer to save logins.
-            OfferToSaveLogins = false;
-            # Disable search suggestions.
-            SearchSuggestEnabled = false;
-            # Install extensions.
-            ExtensionSettings = {
-                # uBlock Origin
-                "uBlock0@raymondhill.net" = {
-                "installation_mode" = "normal_installed";
-                "install_url" =
-                    "https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpi";
-                };
-            };
+      # Do not offer to save logins.
+      OfferToSaveLogins = false;
+      # Disable search suggestions.
+      SearchSuggestEnabled = false;
+      # Install extensions.
+      ExtensionSettings = {
+        # uBlock Origin
+        "uBlock0@raymondhill.net" = {
+          "installation_mode" = "normal_installed";
+          "install_url" =
+            "https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpi";
         };
+      };
     };
+  };
 }

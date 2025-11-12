@@ -6,7 +6,7 @@
   ];
   hardware.usb-modeswitch.enable = true;
 
-  networking.hostName = "laptop"; # Define your hostname.
+  networking.hostName = "laptop";
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;

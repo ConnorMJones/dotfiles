@@ -1,15 +1,17 @@
 { config, pkgs, ... }:
-let myAlias = {
+let
+  myAlias = {
     vim = "nvim";
     v = "nvim";
     ll = "ls -la";
     rsh = "nix-shell /.dotfiles/dev-shells/rust.nix --command fish";
-}; in
+  };
+in
 {
-    programs = {
-        fish = {
-            enable = true;
-            shellAliases = myAlias;
-        };
+  programs = {
+    fish = {
+      enable = true;
+      shellAliases = myAlias;
     };
+  };
 }

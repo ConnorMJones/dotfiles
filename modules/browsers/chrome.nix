@@ -1,12 +1,12 @@
-{config, ... }:
+{ config, ... }:
 {
-    programs.chromium = {
-        enable = true;
+  programs.chromium = {
+    enable = true;
 
-        #extraOpts = {};
-        #extensions = [
-        #    "gcbommkclmclpchllfjekcdonpmejbdp" # https everywhere
-        #    "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
-        #];
-    };
+    #extraOpts = {};
+    #extensions = [
+    #    "gcbommkclmclpchllfjekcdonpmejbdp" # https everywhere
+    #    "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+    #];
+  };
 }
