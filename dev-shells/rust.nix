@@ -10,6 +10,7 @@ pkgs.mkShell {
     protobuf_29
     kubectl
     awscli
+    rusty-hook
   ];
   nativeBuildInputs = with pkgs; [
     pkg-config
@@ -17,6 +18,7 @@ pkgs.mkShell {
   ];
   # shell hooks
   shellHook = ''
+    alias rdev='kubectl port-forward -n cxrs pod/rust-dev 2222:22'
     echo "rust environment activated"
   '';
 

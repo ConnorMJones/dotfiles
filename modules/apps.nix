@@ -10,5 +10,6 @@
     obsidian
     slack
     flameshot
+    brave
   ];
 }

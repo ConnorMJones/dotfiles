@@ -30,6 +30,8 @@
           # access anything else in ... from glb build wide
           specialArgs = glb;
           modules = common ++ [
+            ./modules/browsers/chrome.nix
+            #./modules/browsers/brave.nix
             ./hosts/laptop/configuration.nix
             ./hosts/laptop/hardware-configuration.nix
             ./modules/decor/stylix.nix
