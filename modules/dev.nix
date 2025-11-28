@@ -33,5 +33,6 @@
     ffmpeg-full
     nixfmt
     nixd
+    p7zip
   ];
 }

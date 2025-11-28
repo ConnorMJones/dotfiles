@@ -31,7 +31,6 @@
           specialArgs = glb;
           modules = common ++ [
             ./modules/browsers/chrome.nix
-            #./modules/browsers/brave.nix
             ./hosts/laptop/configuration.nix
             ./hosts/laptop/hardware-configuration.nix
             ./modules/decor/stylix.nix
@@ -39,6 +38,7 @@
             ./modules/typst.nix
             ./modules/gnome.nix
             ./modules/xserver.nix
+            ./modules/keyboard.nix
             stylix.nixosModules.stylix
           ];
         };

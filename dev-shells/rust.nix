@@ -10,7 +10,6 @@ pkgs.mkShell {
     protobuf_29
     kubectl
     awscli
-    rusty-hook
   ];
   nativeBuildInputs = with pkgs; [
     pkg-config
