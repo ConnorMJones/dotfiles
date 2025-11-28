@@ -11,7 +11,10 @@
   hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   environment.shells = with pkgs; [ fish ];
 
