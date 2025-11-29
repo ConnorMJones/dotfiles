@@ -2,7 +2,10 @@
   description = "flake configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    # c65adb019b2db5d94bf43f443f08d4508cedadbb
+    # f720bb2492750ec820dc50f595e94e36954704ff
+    # nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/c65adb019b2db5d94bf43f443f08d4508cedadbb";
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
