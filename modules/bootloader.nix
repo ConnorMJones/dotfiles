@@ -8,6 +8,8 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # crashing amd firmware
+  # boot.kernelPackages = pkgs.linuxPackages_lts;
 
   nixpkgs.config.allowUnfree = true;
   # Enable CUPS to print documents.
