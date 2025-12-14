@@ -4,6 +4,7 @@
     enable = true;
     image = ./wallpaper.jpg;
     polarity = "dark";
+    autoEnable = true;
 
     opacity = {
       applications = 1.0;
@@ -31,7 +32,6 @@
         desktop = 10;
         popups = 10;
       };
-
     };
   };
 

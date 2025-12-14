@@ -18,6 +18,11 @@
       ];
     };
   };
+  #stylix.targets = {
+  #  helix.enable = true;
+  #  vscode.enable = true;
+  #};
+  
   environment.systemPackages = with pkgs; [
     curl
     btop
@@ -34,5 +39,6 @@
     nixfmt
     nixd
     p7zip
+    helix
   ];
 }

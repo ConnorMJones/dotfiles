@@ -10,6 +10,7 @@ pkgs.mkShell {
     protobuf_29
     kubectl
     awscli
+    jq
   ];
   nativeBuildInputs = with pkgs; [
     pkg-config
