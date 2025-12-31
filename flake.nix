@@ -14,6 +14,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dev-shells = {
+      url = "path:./dev-shells";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, stylix, home-manager, ... } @ glb:
@@ -30,6 +34,7 @@
     pkgs = nixpkgs.legacyPackages."x86_64-linux";
   in
   {  
+    nix.registry.nixpkgs.flake = nixpkgs;
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

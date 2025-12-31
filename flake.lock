@@ -68,6 +68,23 @@
         "type": "github"
       }
     },
+    "dev-shells": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust": "rust"
+      },
+      "locked": {
+        "path": "./dev-shells",
+        "type": "path"
+      },
+      "original": {
+        "path": "./dev-shells",
+        "type": "path"
+      },
+      "parent": []
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -163,6 +180,20 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1767026758,
+        "narHash": "sha256-7fsac/f7nh/VaKJ/qm3I338+wAJa/3J57cOGpXi0Sbg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "346dd96ad74dc4457a9db9de4f4f57dab2e5731d",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1763696190,
         "narHash": "sha256-zhFJa7IpPawuUJ6RpZWgpfi5kGLmF0Ae6sQFDBMaMQQ=",
         "owner": "nixos",
@@ -204,10 +235,27 @@
     },
     "root": {
       "inputs": {
+        "dev-shells": "dev-shells",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "stylix": "stylix"
       }
+    },
+    "rust": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "path": "./rust",
+        "type": "path"
+      },
+      "original": {
+        "path": "./rust",
+        "type": "path"
+      },
+      "parent": [
+        "dev-shells"
+      ]
     },
     "stylix": {
       "inputs": {
