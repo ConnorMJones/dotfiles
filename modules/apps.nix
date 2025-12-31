@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./anki.nix
-    ./steam.nix
+    ./apps/anki.nix
+    ./apps/steam.nix
+    ./browsers/firefox.nix
+    ./browsers/chrome.nix
   ];
   environment.systemPackages = with pkgs; [
     neofetch

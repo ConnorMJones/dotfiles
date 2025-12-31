@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 let
   myAlias = {
-    vim = "nvim";
+    "vim" = "nvim";
     v = "nvim";
     ll = "ls -la";
-    rsh = "nix-shell /.dotfiles/dev-shells/rust.nix --command fish";
+    rsh = "nix-shell ~/.dotfiles/dev-shells/rust.nix --command fish";
   };
 in
 {

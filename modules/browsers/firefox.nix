@@ -43,6 +43,12 @@
           "install_url" =
             "https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpi";
         };
+        # Foxy Proxy
+        "foxyproxy@eric.h.jung" = {
+          "installation_mode" = "normal_installed";
+          "install_url" =
+            "https://addons.mozilla.org/firefox/downloads/latest/foxyproxy@eric.h.jung/latest.xpi";
+        };
       };
     };
   };

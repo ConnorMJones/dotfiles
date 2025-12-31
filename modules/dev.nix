@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./dev/typst.nix
+    ./dev/docker.nix
+  ];
   programs = {
     git = {
       enable = true;
@@ -18,10 +22,6 @@
       ];
     };
   };
-  #stylix.targets = {
-  #  helix.enable = true;
-  #  vscode.enable = true;
-  #};
   
   environment.systemPackages = with pkgs; [
     curl

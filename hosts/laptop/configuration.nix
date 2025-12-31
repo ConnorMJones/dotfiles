@@ -30,15 +30,38 @@
   };
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.default = "socks5://127.0.0.1:1080";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 22 1080 2222 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services._3proxy = {
+    enable = true;
+    services = [
+      {
+        type = "socks";
+          auth = [ "strong" ];
+          acl = [ {
+            rule = "allow";
+            users = [ "test1" ];
+          }
+        ];
+      }
+    ];
+    usersFile = "/etc/3proxy.passwd";
+  };
+
+  environment.etc = {
+    "3proxy.passwd".text = ''
+      test1:CL:password1
+    '';
+  };
+
 }

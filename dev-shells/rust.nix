@@ -1,5 +1,3 @@
-# Work around for pkg-config deps
-# rust is installed through rustup from modules/dev.nix
 {
   pkgs ? import <nixpkgs> { },
 }:
@@ -11,10 +9,13 @@ pkgs.mkShell {
     kubectl
     awscli
     jq
+    docker-compose
+    postgresql_18
   ];
   nativeBuildInputs = with pkgs; [
     pkg-config
     python311
+    lsof
   ];
   # shell hooks
   shellHook = ''
@@ -24,5 +25,6 @@ pkgs.mkShell {
 
   # can also set env vars just by specifying variables
   # good for log levels or flags etc.
-  ENV_VAR = "example";
+  # ENV_VAR = "example";
+  DATABASE_URL="postgres://root:toor@localhost:5432/root";
 }

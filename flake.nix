@@ -19,11 +19,9 @@
   outputs = { self, nixpkgs, stylix, home-manager, ... } @ glb:
   let 
     common = [
-      ./modules/browsers/firefox.nix
       ./modules/apps.nix
       ./modules/audio.nix
       ./modules/bootloader.nix
-      ./modules/dev.nix
       ./modules/locale.nix
       ./modules/niri.nix
       ./modules/shell.nix
@@ -38,15 +36,14 @@
         # access anything else in ... from glb build wide
         specialArgs = glb;
         modules = common ++ [
-          ./modules/browsers/chrome.nix
           ./hosts/laptop/configuration.nix
           ./hosts/laptop/hardware-configuration.nix
           ./modules/decor/stylix.nix
           ./modules/nvidia.nix
-          ./modules/typst.nix
           ./modules/gnome.nix
           ./modules/xserver.nix
           ./modules/keyboard.nix
+          ./modules/dev.nix
           stylix.nixosModules.stylix
         ];
       };
