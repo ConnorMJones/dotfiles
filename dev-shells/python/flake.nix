@@ -1,5 +1,5 @@
 {
-  description = "Lean 4 dev shell";
+  description = "Python dev shell";
 
   inputs.nixpkgs.url = "nixpkgs";
 
@@ -11,16 +11,19 @@
       devShells = lib.genAttrs lib.systems.flakeExposed (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
+          # Define your python environment here
+          myPython = pkgs.python311.withPackages (ps: with ps; [
+            pandas
+            requests
+            numpy
+            black # Formatter
+          ]);
         in
         {
           default = pkgs.mkShell {
-            nativeBuildInputs = with pkgs; [
-              lean4
-              elan # Optional: if you still want to manage versions manually
-            ];
+            nativeBuildInputs = [ myPython ];
             shellHook = ''
-              echo "Lean 4 environment active"
-              echo "Lake version: $(lake --version)"
+              echo "Python $(python --version) env active"
             '';
           };
         });
