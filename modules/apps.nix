@@ -3,6 +3,8 @@
   imports = [
     ./apps/anki.nix
     ./apps/steam.nix
+    ./apps/zotero.nix
+    ./apps/1password.nix
     ./browsers/firefox.nix
     ./browsers/chrome.nix
   ];
