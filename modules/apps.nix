@@ -15,5 +15,7 @@
     slack
     flameshot
     brave
+    libreoffice-qt
+    hunspell
   ];
 }
