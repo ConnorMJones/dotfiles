@@ -4,6 +4,7 @@
     ./dev/typst.nix
     ./dev/docker.nix
     ./dev/nixld.nix
+    ./dev/claude.nix
   ];
   programs = {
     git = {
