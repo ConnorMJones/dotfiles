@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     neofetch
     discord
+    element-desktop
     obsidian
     slack
     flameshot
