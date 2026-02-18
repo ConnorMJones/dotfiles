@@ -49,6 +49,7 @@
           ./modules/xserver.nix
           ./modules/keyboard.nix
           ./modules/dev.nix
+          ./modules/services.nix
           stylix.nixosModules.stylix
         ];
       };
