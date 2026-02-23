@@ -18,5 +18,9 @@
     brave
     libreoffice-qt
     hunspell
+    wineWowPackages.stable
+    #wineWowPackages.staging
+    #wineWowPackages.waylandFull
+    winetricks
   ];
 }

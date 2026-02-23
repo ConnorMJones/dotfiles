@@ -11,9 +11,8 @@
       devShells = lib.genAttrs lib.systems.flakeExposed (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          # Define your python environment here
           myPython = pkgs.python311.withPackages (ps: with ps; [
-            pandas
+            # polars this just takes too long to compile
             requests
             numpy
             black # Formatter
@@ -21,7 +20,7 @@
         in
         {
           default = pkgs.mkShell {
-            nativeBuildInputs = [ myPython ];
+            nativeBuildInputs = [ myPython pkgs.poetry ];
             shellHook = ''
               echo "Python $(python --version) env active"
             '';
