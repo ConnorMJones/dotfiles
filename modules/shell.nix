@@ -56,6 +56,14 @@
           set -l encoded_path (string escape --style=url "$target_path")
           xdg-open "obsidian://open?path=$encoded_path"
       end
+
+      function claude-personal
+        CLAUDE_CONFIG_DIR=~/.claude-personal claude $argv
+      end
+
+      function claude-work
+        CLAUDE_CONFIG_DIR=~/.claude-work claude $argv
+      end
     '';
   };
 }
