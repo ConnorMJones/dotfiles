@@ -27,7 +27,6 @@
       ./modules/audio.nix
       ./modules/bootloader.nix
       ./modules/locale.nix
-      ./modules/niri.nix
       ./modules/shell.nix
       ./modules/users.nix
     ];
