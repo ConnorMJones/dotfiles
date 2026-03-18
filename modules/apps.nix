@@ -9,7 +9,7 @@
     ./browsers/chrome.nix
   ];
   environment.systemPackages = with pkgs; [
-    neofetch
+    fastfetch
     discord
     element-desktop
     obsidian
@@ -18,9 +18,9 @@
     brave
     libreoffice-qt
     hunspell
-    wineWowPackages.stable
+    #wineWowPackages.stable
     #wineWowPackages.staging
     #wineWowPackages.waylandFull
-    winetricks
+    #winetricks
   ];
 }
