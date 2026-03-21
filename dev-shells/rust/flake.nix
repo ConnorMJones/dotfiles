@@ -34,12 +34,8 @@
             ];
 
             shellHook = ''
-              alias rdev='kubectl port-forward -n cxrs pod/rust-dev 2222:22'
               echo "rust environment activated"
             '';
-
-            DATABASE_URL =
-              "postgres://root:toor@localhost:5432/root";
           };
         });
     };
