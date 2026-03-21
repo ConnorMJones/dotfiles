@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./apps/anki.nix
@@ -18,9 +18,5 @@
     brave
     libreoffice-qt
     hunspell
-    #wineWowPackages.stable
-    #wineWowPackages.staging
-    #wineWowPackages.waylandFull
-    #winetricks
   ];
 }

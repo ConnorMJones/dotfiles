@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 {
   # https://wiki.nixos.org/wiki/Docker
   # https://nix.dev/tutorials/nixos/building-and-running-docker-images.html

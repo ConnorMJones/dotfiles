@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 {
   # Enable the X11 windowing system.
   # Enable the GNOME Desktop Environment.

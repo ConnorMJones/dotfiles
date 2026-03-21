@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
   environment.systemPackages = [
     pkgs.linuxKernel.packages.linux_5_15.rtw89

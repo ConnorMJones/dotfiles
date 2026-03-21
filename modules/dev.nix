@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./dev/typst.nix
     ./dev/docker.nix
-    # ./dev/nixld.nix
     ./dev/claude.nix
   ];
   programs = {
@@ -22,13 +21,12 @@
     vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
-        # vscodevim.vim
         yzhang.markdown-all-in-one
         jnoortheen.nix-ide
       ];
     };
   };
-  
+
   environment.systemPackages = with pkgs; [
     curl
     btop
@@ -46,6 +44,7 @@
     nixd
     p7zip
     helix
+    gitui
     nvtopPackages.full
   ];
 }

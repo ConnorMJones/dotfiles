@@ -1,10 +1,5 @@
+{ pkgs, ...}:
 {
-  pkgs,
-  config,
-  inputs,
-  lib,
-  ...
-}: {
   programs.helix = {
     package = pkgs.helix;
     enable = true;
@@ -12,7 +7,11 @@
 
     settings = {
       theme = "custom";
-      keys = {};
+      keys = {
+        normal = {
+          C-g = [":new" ":insert-output gitui" ":buffer-close!" ":redraw"];
+        };
+      };
 
       editor = {
         line-number = "relative";
