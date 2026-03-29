@@ -9,7 +9,7 @@
       theme = "custom";
       keys = {
         normal = {
-          C-g = [":new" ":insert-output gitui" ":buffer-close!" ":redraw"];
+          C-g = ":sh gitui";
         };
       };
 

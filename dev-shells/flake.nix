@@ -8,9 +8,10 @@
     zig.url = "./zig";
     lean.url = "./lean4";
     python.url = "./python";
+    cuda.url = "./cuda";
   };
 
-  outputs = { self, nixpkgs, rust, zig, lean, python }:
+  outputs = { self, nixpkgs, rust, zig, lean, python, cuda }:
     let
       lib = nixpkgs.lib;
     in
@@ -24,6 +25,7 @@
           zig = zig.devShells.${system}.default;
           python = python.devShells.${system}.default;
           lean = lean.devShells.${system}.default;
+          cuda = cuda.devShells.${system}.default;
 
           full = pkgs.mkShell {
             inputsFrom = [

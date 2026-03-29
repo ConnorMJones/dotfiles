@@ -34,6 +34,7 @@
     pkgs = nixpkgs.legacyPackages."x86_64-linux";
   in
   {  
+    nixpkgs.config.allowUnfree = true;
     nix.registry.nixpkgs.flake = nixpkgs;
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
