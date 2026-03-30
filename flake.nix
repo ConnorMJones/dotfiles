@@ -8,7 +8,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     # nixpkgs.url = "github:nixos/nixpkgs/c65adb019b2db5d94bf43f443f08d4508cedadbb";
     stylix = {
-      url = "github:nix-community/stylix";
+      url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -45,6 +45,8 @@
           ./hosts/laptop/configuration.nix
           ./hosts/laptop/hardware-configuration.nix
           ./modules/decor/stylix.nix
+          ./modules/decor/fonts-cjk.nix
+          ./modules/input-methods.nix
           ./modules/nvidia.nix
           ./modules/gnome.nix
           ./modules/xserver.nix
