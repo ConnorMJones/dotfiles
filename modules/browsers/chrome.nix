@@ -5,8 +5,8 @@
 
     #extraOpts = {};
     extensions = [
-        "gcbommkclmclpchllfjekcdonpmejbdp" # https everywhere
-        "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+      "gcbommkclmclpchllfjekcdonpmejbdp" # https everywhere
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
     ];
   };
 }

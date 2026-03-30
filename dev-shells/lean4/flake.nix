@@ -3,12 +3,14 @@
 
   inputs.nixpkgs.url = "nixpkgs";
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       lib = nixpkgs.lib;
     in
     {
-      devShells = lib.genAttrs lib.systems.flakeExposed (system:
+      devShells = lib.genAttrs lib.systems.flakeExposed (
+        system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
         in
@@ -23,6 +25,7 @@
               echo "Lake version: $(lake --version)"
             '';
           };
-        });
+        }
+      );
     };
 }

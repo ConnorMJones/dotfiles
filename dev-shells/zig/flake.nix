@@ -5,12 +5,14 @@
     nixpkgs.url = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       lib = nixpkgs.lib;
     in
     {
-      devShells = lib.genAttrs lib.systems.flakeExposed (system:
+      devShells = lib.genAttrs lib.systems.flakeExposed (
+        system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
         in
@@ -24,9 +26,9 @@
 
             # nativeBuildInputs: Build-time tools
             nativeBuildInputs = with pkgs; [
-              zig        # The Zig compiler
-              zls        # Zig Language Server (crucial for IDE support)
-              gdb        # Debugger
+              zig # The Zig compiler
+              zls # Zig Language Server (crucial for IDE support)
+              gdb # Debugger
               pkg-config # Helps Zig find C libraries
             ];
 
@@ -35,6 +37,7 @@
               echo "ZLS (Language Server) is available"
             '';
           };
-        });
+        }
+      );
     };
 }

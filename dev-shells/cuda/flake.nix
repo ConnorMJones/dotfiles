@@ -5,12 +5,14 @@
     nixpkgs.url = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       lib = nixpkgs.lib;
     in
     {
-      devShells = lib.genAttrs lib.systems.flakeExposed (system:
+      devShells = lib.genAttrs lib.systems.flakeExposed (
+        system:
         let
           pkgs = import nixpkgs {
             inherit system;
@@ -38,6 +40,7 @@
               echo "Cuda environment activated"
             '';
           };
-        });
+        }
+      );
     };
 }

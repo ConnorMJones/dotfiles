@@ -5,8 +5,8 @@
     type = "fcitx5";
     fcitx5 = {
       addons = with pkgs; [
-        qt6Packages.fcitx5-chinese-addons  # Pinyin and other Chinese input methods
-        fcitx5-gtk                          # GTK integration
+        qt6Packages.fcitx5-chinese-addons # Pinyin and other Chinese input methods
+        fcitx5-gtk # GTK integration
       ];
       waylandFrontend = true;
       settings = {

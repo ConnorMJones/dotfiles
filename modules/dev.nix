@@ -9,7 +9,7 @@
     git = {
       enable = true;
     };
-    tmux = { 
+    tmux = {
       enable = true;
       terminal = "screen-256color";
     };

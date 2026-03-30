@@ -10,7 +10,10 @@
   hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   environment.shells = with pkgs; [ fish ];
 
@@ -33,7 +36,11 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 1080 2222 ];
+  networking.firewall.allowedTCPPorts = [
+    22
+    1080
+    2222
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -46,8 +53,9 @@
     services = [
       {
         type = "socks";
-          auth = [ "strong" ];
-          acl = [ {
+        auth = [ "strong" ];
+        acl = [
+          {
             rule = "allow";
             users = [ "test1" ];
           }

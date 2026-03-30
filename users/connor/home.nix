@@ -7,7 +7,10 @@
 
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
-  imports = [ ./wacom.nix ./helix.nix ];
+  imports = [
+    ./wacom.nix
+    ./helix.nix
+  ];
   #services.displayManager.gdm = {
   #  enable = true;
   #  autoSuspend = false;

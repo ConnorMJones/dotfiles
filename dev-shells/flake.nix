@@ -11,12 +11,22 @@
     cuda.url = "./cuda";
   };
 
-  outputs = { self, nixpkgs, rust, zig, lean, python, cuda }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      rust,
+      zig,
+      lean,
+      python,
+      cuda,
+    }:
     let
       lib = nixpkgs.lib;
     in
     {
-      devShells = lib.genAttrs lib.systems.flakeExposed (system:
+      devShells = lib.genAttrs lib.systems.flakeExposed (
+        system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
         in
@@ -33,7 +43,7 @@
               zig.devShells.${system}.default
               lean.devShells.${system}.default
             ];
-            
+
             shellHook = ''
               echo "--- Full Dev Shell Active ---"
             '';
