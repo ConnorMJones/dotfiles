@@ -10,6 +10,7 @@
   imports = [
     ./wacom.nix
     ./helix.nix
+    ./xkb.nix
   ];
   #services.displayManager.gdm = {
   #  enable = true;
