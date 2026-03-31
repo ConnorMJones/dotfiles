@@ -4,7 +4,7 @@ build:
 	sudo nixos-rebuild switch --flake .#$(HOSTNAME)
 
 hm:
-	home-manager switch --flake .#connor
+	home-manager switch --flake .#connor --impure
 
 update:
 	nix flake update

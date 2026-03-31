@@ -1,6 +1,7 @@
 { ... }:
 {
   # Fix F13-F24 keys to output correct keysyms
+  # libxkbcommon (used by Wayland) reads from ~/.config/xkb/
   home.file.".config/xkb/symbols/highfnkeys".text = ''
     default partial function_keys
     xkb_symbols "highfnkeys" {

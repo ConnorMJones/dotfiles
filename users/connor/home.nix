@@ -35,6 +35,18 @@
       color-scheme = "prefer-dark";
       enable-hot-corners = false;
     };
+    # fcitx5 can't grab global hotkeys on Wayland - use GNOME shortcut instead
+    # https://github.com/fcitx/fcitx5/issues/333
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      name = "Toggle Input Method";
+      command = "fcitx5-remote -t";
+      binding = "F24";
+    };
   };
   programs.home-manager.enable = true;
 }
