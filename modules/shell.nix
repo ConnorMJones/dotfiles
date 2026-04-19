@@ -9,6 +9,8 @@
     };
 
     shellInit = ''
+      fish_add_path ~/.local/bin
+
       function sh
           if test (count $argv) -eq 0
               echo "Usage: sh <shell> [shell2...]"
