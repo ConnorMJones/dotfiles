@@ -1,23 +1,38 @@
 {
   "nodes": {
-    "nixpkgs": {
+    "kubefwd-src": {
+      "flake": false,
       "locked": {
-        "lastModified": 1766902085,
-        "narHash": "sha256-coBu0ONtFzlwwVBzmjacUQwj3G+lybcZ1oeNSQkgC0M=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "c0b0e0fddf73fd517c3471e546c0df87a42d53f4",
+        "lastModified": 1776857602,
+        "narHash": "sha256-4r6Be/U7ExM6dDEA1KnKYREA2sPp0FIhqdFteD4jPtA=",
+        "owner": "txn2",
+        "repo": "kubefwd",
+        "rev": "cbabbfcc8dc482a388cd3c84b747ca3d5e8dd0fd",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
+        "owner": "txn2",
+        "repo": "kubefwd",
         "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1776329215,
+        "narHash": "sha256-a8BYi3mzoJ/AcJP8UldOx8emoPRLeWqALZWu4ZvjPXw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b86751bc4085f48661017fa226dee99fab6c651b",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "root": {
       "inputs": {
+        "kubefwd-src": "kubefwd-src",
         "nixpkgs": "nixpkgs"
       }
     }

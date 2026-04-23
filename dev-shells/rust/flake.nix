@@ -3,10 +3,14 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs";
+    kubefwd-src = {
+      url = "github:txn2/kubefwd";
+      flake = false;
+    };
   };
 
   outputs =
-    { self, nixpkgs }:
+    { self, nixpkgs, kubefwd-src }:
     let
       lib = nixpkgs.lib;
     in
@@ -15,6 +19,15 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
+          kubefwd = pkgs.buildGoModule {
+            pname = "kubefwd";
+            version = "master";
+            src = kubefwd-src;
+            vendorHash = "sha256-0Tcov+4a6bPVfT9QKaHfHQAHJnP9QvDdMpCk/xSzTFU=";
+            excludedPackages = [ "test/integration" ];
+            ldflags = [ "-s" "-w" ];
+            meta.mainProgram = "kubefwd";
+          };
         in
         {
           default = pkgs.mkShell {
@@ -27,6 +40,7 @@
               jq
               docker-compose
               postgresql_18
+              kubefwd
             ];
 
             nativeBuildInputs = with pkgs; [
