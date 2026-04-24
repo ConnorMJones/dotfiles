@@ -4,7 +4,6 @@
     ./dev/typst.nix
     ./dev/docker.nix
     ./dev/claude.nix
-    # ./dev/codex.nix
   ];
   programs = {
     git = {
@@ -47,5 +46,8 @@
     helix
     gitui
     nvtopPackages.full
+    ripgrep
+    ripgrep-all
+    poppler
   ];
 }

@@ -10,7 +10,11 @@
   };
 
   outputs =
-    { self, nixpkgs, kubefwd-src }:
+    {
+      self,
+      nixpkgs,
+      kubefwd-src,
+    }:
     let
       lib = nixpkgs.lib;
     in
@@ -25,7 +29,10 @@
             src = kubefwd-src;
             vendorHash = "sha256-0Tcov+4a6bPVfT9QKaHfHQAHJnP9QvDdMpCk/xSzTFU=";
             excludedPackages = [ "test/integration" ];
-            ldflags = [ "-s" "-w" ];
+            ldflags = [
+              "-s"
+              "-w"
+            ];
             meta.mainProgram = "kubefwd";
           };
         in

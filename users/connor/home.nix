@@ -10,6 +10,7 @@
   imports = [
     ./wacom.nix
     ./helix.nix
+    ./xdg.nix
     ./xkb.nix
   ];
   #services.displayManager.gdm = {
