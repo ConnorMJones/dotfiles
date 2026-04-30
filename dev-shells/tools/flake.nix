@@ -1,5 +1,5 @@
 {
-  description = "Rust dev shell";
+  description = "Tools";
 
   inputs = {
     nixpkgs.url = "nixpkgs";
@@ -52,12 +52,14 @@
 
             nativeBuildInputs = with pkgs; [
               pkg-config
+              alsa-lib
+              tailscale
               python311
               lsof
             ];
 
             shellHook = ''
-              echo "rust environment activated"
+              echo "Tools added to shell"
             '';
           };
         }

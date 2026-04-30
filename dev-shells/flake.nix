@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs";
 
-    rust.url = "./rust";
+    tools.url = "./tools";
     zig.url = "./zig";
     lean.url = "./lean4";
     python.url = "./python";
@@ -15,7 +15,7 @@
     {
       self,
       nixpkgs,
-      rust,
+      tools,
       zig,
       lean,
       python,
@@ -31,7 +31,7 @@
           pkgs = nixpkgs.legacyPackages.${system};
         in
         {
-          rust = rust.devShells.${system}.default;
+          tools = tools.devShells.${system}.default;
           zig = zig.devShells.${system}.default;
           python = python.devShells.${system}.default;
           lean = lean.devShells.${system}.default;
@@ -39,7 +39,7 @@
 
           full = pkgs.mkShell {
             inputsFrom = [
-              rust.devShells.${system}.default
+              tools.devShells.${system}.default
               zig.devShells.${system}.default
               lean.devShells.${system}.default
             ];

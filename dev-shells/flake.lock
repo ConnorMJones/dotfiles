@@ -148,21 +148,21 @@
         "lean": "lean",
         "nixpkgs": "nixpkgs_3",
         "python": "python",
-        "rust": "rust",
+        "tools": "tools",
         "zig": "zig"
       }
     },
-    "rust": {
+    "tools": {
       "inputs": {
         "kubefwd-src": "kubefwd-src",
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "path": "./rust",
+        "path": "./tools",
         "type": "path"
       },
       "original": {
-        "path": "./rust",
+        "path": "./tools",
         "type": "path"
       },
       "parent": []
