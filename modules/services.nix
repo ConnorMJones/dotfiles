@@ -1,5 +1,13 @@
 { pkgs, ... }:
 {
+  services.tailscale = {
+    enable = true;
+    package = pkgs.tailscale;
+  };
+
+  environment.systemPackages = [
+    pkgs.tailscale
+  ];
   # For kubefwd
   environment.etc.hosts.mode = "0644";
   systemd.user.services.obsidian = {

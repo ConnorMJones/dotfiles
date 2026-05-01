@@ -53,7 +53,6 @@
             nativeBuildInputs = with pkgs; [
               pkg-config
               alsa-lib
-              tailscale
               python311
               lsof
             ];
