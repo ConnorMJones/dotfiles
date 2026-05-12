@@ -20,5 +20,6 @@
     brave
     libreoffice-qt
     hunspell
+    sticky
   ];
 }
