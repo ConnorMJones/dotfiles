@@ -33,6 +33,7 @@
         ./modules/locale.nix
         ./modules/shell.nix
         ./modules/users.nix
+        ./modules/xdg.nix
       ];
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
     in
