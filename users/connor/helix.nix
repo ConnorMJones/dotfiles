@@ -14,6 +14,8 @@
       };
 
       editor = {
+        clipboard-provider = "wayland";
+
         line-number = "relative";
         soft-wrap.enable = true;
         true-color = true;
