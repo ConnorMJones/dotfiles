@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./dev/tmux.nix
     ./dev/typst.nix
     ./dev/docker.nix
     ./dev/claude.nix
@@ -8,10 +9,6 @@
   programs = {
     git = {
       enable = true;
-    };
-    tmux = {
-      enable = true;
-      terminal = "screen-256color";
     };
     # https://wiki.nixos.org/wiki/Neovim/en
     neovim = {
