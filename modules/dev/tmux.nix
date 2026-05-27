@@ -7,6 +7,8 @@
     historyLimit = 10000;
     extraConfig = ''
       set -ag terminal-overrides ",xterm-256color:Tc"
+      set -g prefix-timeout 10
+      set -g repeat-time 100
     '';
   };
 }
