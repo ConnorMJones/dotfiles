@@ -1,14 +1,27 @@
 { pkgs, ... }:
 {
   environment.systemPackages = [
-    pkgs.linuxKernel.packages.linux_5_15.rtw89
+    pkgs.bluez
+    pkgs.bluez-tools
   ];
   hardware.usb-modeswitch.enable = true;
 
   networking.hostName = "laptop";
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = true;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
+  };
 
   nix.settings.experimental-features = [
     "nix-command"

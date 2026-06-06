@@ -3,16 +3,16 @@
   xdg.enable = true;
   xdg.userDirs = {
     enable = true;
-    createDirectories = true;
+    createDirectories = false;
 
     desktop = "$HOME/desktop";
     download = "$HOME/downloads";
-    templates = "$HOME/templates";
     publicShare = "$HOME/public";
     documents = "$HOME/documents";
     music = "$HOME/music";
     pictures = "$HOME/pictures";
     videos = "$HOME/videos";
+    templates = "$HOME";
 
     extraConfig = {
       XDG_PROJECTS_DIR = "$HOME/projects";

@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    wl-clipboard
+  ];
   programs.helix = {
     package = pkgs.helix;
     enable = true;
