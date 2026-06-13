@@ -1,0 +1,83 @@
+{
+  "nodes": {
+    "hel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1779981384,
+        "narHash": "sha256-95ioUvlD5MAAzHRsB+EO+3uVeAJLQ9hJ29Kvj3y1rrU=",
+        "owner": "anuvyklack",
+        "repo": "hel",
+        "rev": "2388a5583a65c7407e427aa89dfccf4f85220db2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anuvyklack",
+        "repo": "hel",
+        "type": "github"
+      }
+    },
+    "helheim-emacs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781216188,
+        "narHash": "sha256-ojwFQxTlH7PdKFZS8ruGMR6ZNdMMnBHuujHyl9IA55w=",
+        "owner": "anuvyklack",
+        "repo": "helheim-emacs",
+        "rev": "217d4a7bcf129e8333de1b38cda63355130571a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anuvyklack",
+        "repo": "helheim-emacs",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779506708,
+        "narHash": "sha256-QOD/CNm196nCJRheux/URi4/HE66fthdOMqCJoPP1Y0=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "3ee51fbdac8c8bdfe1e7e1fcaba6520a563f394f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-25.11",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1780952837,
+        "narHash": "sha256-Fwd1+spDtQ0hDyBwme6ufG3n4mY0UrjjFdYHv+G/Hds=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e820eb4a444b46a19b2e03e8dfd2359439ff30fe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "hel": "hel",
+        "helheim-emacs": "helheim-emacs",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

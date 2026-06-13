@@ -15,6 +15,11 @@
       url = "path:./dev-shells";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dotflakes = {
+      url = "path:./flakes";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs =
@@ -23,6 +28,7 @@
       nixpkgs,
       stylix,
       home-manager,
+      dotflakes,
       ...
     }@glb:
     let
@@ -31,6 +37,7 @@
         ./modules/audio.nix
         ./modules/bootloader.nix
         ./modules/locale.nix
+        ./modules/productivity.nix
         ./modules/shell.nix
         ./modules/users.nix
         ./modules/xdg.nix
@@ -64,7 +71,10 @@
       homeConfigurations = {
         connor = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./users/connor/home.nix ];
+          modules = [
+            dotflakes.homeManagerModules.emacs
+            ./users/connor/home.nix
+          ];
         };
       };
 
