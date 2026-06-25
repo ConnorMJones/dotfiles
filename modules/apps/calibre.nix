@@ -1,10 +1,11 @@
 { pkgs, ... }:
 {
-  # services.udisks2 = {
-  # enable = true;
-  # mountOnMedia = true;
-  # };
   nixpkgs.config.allowUnfree = true;
+
+  services.udisks2 = {
+    enable = true;
+    mountOnMedia = true;
+  };
   environment.systemPackages = with pkgs; [
     calibre
     unrar
