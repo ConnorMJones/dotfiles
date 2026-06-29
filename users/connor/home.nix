@@ -48,6 +48,12 @@
       command = "fcitx5-remote -t";
       binding = "F24";
     };
+    # Needed to stop kindle mtp getting monopolized
+    # by file manager preventing access to calibre
+    "org/gnome/desktop/media-handling" = {
+      automount = false;
+      automount-open = false;
+    };
   };
   programs.home-manager.enable = true;
 }
