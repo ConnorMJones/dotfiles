@@ -7,6 +7,7 @@
     ./apps/calibre.nix
     ./apps/foliate.nix
     ./apps/1password.nix
+    ./apps/video-editing.nix
     ./browsers/firefox.nix
     ./browsers/chrome.nix
   ];
