@@ -5,10 +5,6 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    heroic
-  ];
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
 }

@@ -13,15 +13,19 @@
     enable = true;
     powerOnBoot = true;
     settings = {
-      General = {
-        Experimental = true;
-        FastConnectable = true;
-      };
       Policy = {
         AutoEnable = true;
       };
     };
   };
+
+  services.udev.extraRules = ''
+    # Keep the internal Realtek Bluetooth controller awake; autosuspend can cause
+    # intermittent drops on some laptops.
+    ACTION=="add|change", SUBSYSTEM=="usb", ATTR{idVendor}=="0bda", ATTR{idProduct}=="5852", TEST=="power/control", ATTR{power/control}="on", ATTR{power/autosuspend_delay_ms}="-1"
+  '';
+
+  boot.extraModprobeConfig = "options rtw89_core disable_ps_mode=Y";
 
   nix.settings.experimental-features = [
     "nix-command"

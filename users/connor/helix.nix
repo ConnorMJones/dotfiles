@@ -1,4 +1,8 @@
 { pkgs, ... }:
+let
+  shared = import ../../flakes/shared;
+  base16 = shared.base16_scheme;
+in
 {
   home.packages = with pkgs; [
     wl-clipboard
@@ -6,15 +10,10 @@
   programs.helix = {
     package = pkgs.helix;
     enable = true;
-    defaultEditor = false;
+    defaultEditor = true;
 
     settings = {
       theme = "custom";
-      keys = {
-        normal = {
-          C-g = ":sh gitui";
-        };
-      };
 
       editor = {
         clipboard-provider = "wayland";
@@ -104,23 +103,25 @@
     themes = {
       custom =
         let
-          # Colors from your stylix config
-          base00 = "#061229"; # background
-          base01 = "#2a3448"; # lighter bg
-          base02 = "#4d5666"; # selection
-          base03 = "#717885"; # comments
-          base04 = "#9a99a3"; # dark fg
-          base05 = "#b8bbc2"; # default fg
-          base06 = "#dbdde0"; # light fg
-          base07 = "#ffffff"; # white
-          base08 = "#d07346"; # orange - variables, errors
-          base09 = "#f0a000"; # yellow-orange - constants
-          base0A = "#fbd461"; # yellow - types
-          base0B = "#99bf52"; # green - strings
-          base0C = "#72b9bf"; # cyan - regex, escapes
-          base0D = "#5299bf"; # blue - functions
-          base0E = "#9989cc"; # purple - keywords
-          base0F = "#b08060"; # brown - deprecated
+          inherit (base16)
+            # Colors from your stylix config
+            base00 # "#061229"; # background
+            base01 # "#2a3448"; # lighter bg
+            base02 # "#4d5666"; # selection
+            base03 # "#717885"; # comments
+            base04 # "#9a99a3"; # dark fg
+            base05 # "#b8bbc2"; # default fg
+            base06 # "#dbdde0"; # light fg
+            base07 # "#ffffff"; # white
+            base08 # "#d07346"; # orange - variables, errors
+            base09 # "#f0a000"; # yellow-orange - constants
+            base0A # "#fbd461"; # yellow - types
+            base0B # "#99bf52"; # green - strings
+            base0C # "#72b9bf"; # cyan - regex, escapes
+            base0D # "#5299bf"; # blue - functions
+            base0E # "#9989cc"; # purple - keywords
+            base0F # "#b08060"; # brown - deprecated
+            ;
         in
         {
           # UI

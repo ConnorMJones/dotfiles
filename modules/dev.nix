@@ -6,14 +6,11 @@
     ./dev/docker.nix
     ./dev/claude.nix
   ];
+  environment.variables.EDITOR = "hx";
+
   programs = {
     git = {
       enable = true;
-    };
-    # https://wiki.nixos.org/wiki/Neovim/en
-    neovim = {
-      enable = true;
-      defaultEditor = true;
     };
     vscode = {
       enable = true;

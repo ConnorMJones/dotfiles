@@ -92,7 +92,7 @@
           "nixpkgs"
         ],
         "python": "python",
-        "rust": "rust",
+        "tools": "tools",
         "zig": "zig"
       },
       "locked": {
@@ -104,6 +104,51 @@
         "type": "path"
       },
       "parent": []
+    },
+    "dotflakes": {
+      "inputs": {
+        "emacs": "emacs",
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./flakes",
+        "type": "path"
+      },
+      "original": {
+        "path": "./flakes",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "emacs": {
+      "inputs": {
+        "hel": "hel",
+        "helheim-emacs": "helheim-emacs",
+        "home-manager": [
+          "dotflakes",
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "dotflakes",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./emacs",
+        "type": "path"
+      },
+      "original": {
+        "path": "./emacs",
+        "type": "path"
+      },
+      "parent": [
+        "dotflakes"
+      ]
     },
     "firefox-gnome-theme": {
       "flake": false,
@@ -177,6 +222,38 @@
         "type": "gitlab"
       }
     },
+    "hel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1779981384,
+        "narHash": "sha256-95ioUvlD5MAAzHRsB+EO+3uVeAJLQ9hJ29Kvj3y1rrU=",
+        "owner": "anuvyklack",
+        "repo": "hel",
+        "rev": "2388a5583a65c7407e427aa89dfccf4f85220db2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anuvyklack",
+        "repo": "hel",
+        "type": "github"
+      }
+    },
+    "helheim-emacs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781216188,
+        "narHash": "sha256-ojwFQxTlH7PdKFZS8ruGMR6ZNdMMnBHuujHyl9IA55w=",
+        "owner": "anuvyklack",
+        "repo": "helheim-emacs",
+        "rev": "217d4a7bcf129e8333de1b38cda63355130571a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anuvyklack",
+        "repo": "helheim-emacs",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -184,11 +261,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775425411,
-        "narHash": "sha256-KY6HsebJHEe5nHOWP7ur09mb0drGxYSzE3rQxy62rJo=",
+        "lastModified": 1779506708,
+        "narHash": "sha256-QOD/CNm196nCJRheux/URi4/HE66fthdOMqCJoPP1Y0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0d02ec1d0a05f88ef9e74b516842900c41f0f2fe",
+        "rev": "3ee51fbdac8c8bdfe1e7e1fcaba6520a563f394f",
         "type": "github"
       },
       "original": {
@@ -232,11 +309,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1776329215,
-        "narHash": "sha256-a8BYi3mzoJ/AcJP8UldOx8emoPRLeWqALZWu4ZvjPXw=",
+        "lastModified": 1780930886,
+        "narHash": "sha256-rppURzHviaQN131F+nLiLdGfcb0uCd9gGP0E5+iw9MI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b86751bc4085f48661017fa226dee99fab6c651b",
+        "rev": "8c3cede7ddc26bd659d2d383b5610efbd2c7a16e",
         "type": "github"
       },
       "original": {
@@ -302,16 +379,32 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1776221942,
-        "narHash": "sha256-FbQAeVNi7G4v3QCSThrSAAvzQTmrmyDLiHNPvTF2qFM=",
+        "lastModified": 1783148766,
+        "narHash": "sha256-uslt2pqShTIXDdAHRHv2QkYLsVdY8Oqwz0EA48/RSM8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1766437c5509f444c1b15331e82b8b6a9b967000",
+        "rev": "a50de1b7d8a586adc18d2395c19de7d6058e6030",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-25.11",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixupkgs": {
+      "locked": {
+        "lastModified": 1783224372,
+        "narHash": "sha256-8i/87eeoqiGE4yOTjwSA3Eh/ziJRQEmd/unYU+K27sk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d407951447dcd00442e97087bf374aad70c04cea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -360,27 +453,12 @@
     "root": {
       "inputs": {
         "dev-shells": "dev-shells",
+        "dotflakes": "dotflakes",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_6",
+        "nixupkgs": "nixupkgs",
         "stylix": "stylix"
       }
-    },
-    "rust": {
-      "inputs": {
-        "kubefwd-src": "kubefwd-src",
-        "nixpkgs": "nixpkgs_4"
-      },
-      "locked": {
-        "path": "./rust",
-        "type": "path"
-      },
-      "original": {
-        "path": "./rust",
-        "type": "path"
-      },
-      "parent": [
-        "dev-shells"
-      ]
     },
     "stylix": {
       "inputs": {
@@ -403,11 +481,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1775935110,
-        "narHash": "sha256-twTHKUFXjNNsaAvX0KoaIClt+923jXDRbfCd9PC/f0o=",
+        "lastModified": 1780418491,
+        "narHash": "sha256-+eo3U9WHpCkaT/FBGf98kdQprKMUREdY/vmvkej5EiI=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "14f248ad1a7668e7858c6d9163608c208b7daf02",
+        "rev": "16689b1d3280604a16d29e249f6b5a1a688e3905",
         "type": "github"
       },
       "original": {
@@ -512,6 +590,23 @@
         "repo": "base16-zed",
         "type": "github"
       }
+    },
+    "tools": {
+      "inputs": {
+        "kubefwd-src": "kubefwd-src",
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "path": "./tools",
+        "type": "path"
+      },
+      "original": {
+        "path": "./tools",
+        "type": "path"
+      },
+      "parent": [
+        "dev-shells"
+      ]
     },
     "zig": {
       "inputs": {

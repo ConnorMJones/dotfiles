@@ -2,7 +2,8 @@
   description = "flake configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixupkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,14 +16,21 @@
       url = "path:./dev-shells";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dotflakes = {
+      url = "path:./flakes";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      nixupkgs,
       stylix,
       home-manager,
+      dotflakes,
       ...
     }@glb:
     let
@@ -31,11 +39,16 @@
         ./modules/audio.nix
         ./modules/bootloader.nix
         ./modules/locale.nix
+        ./modules/productivity.nix
         ./modules/shell.nix
         ./modules/users.nix
         ./modules/xdg.nix
       ];
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      upkgs = import nixupkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
     in
     {
       nixpkgs.config.allowUnfree = true;
@@ -44,7 +57,9 @@
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           # access anything else in ... from glb build wide
-          specialArgs = glb;
+          specialArgs = glb // {
+            inherit upkgs;
+          };
           modules = common ++ [
             ./hosts/laptop/configuration.nix
             ./hosts/laptop/hardware-configuration.nix
@@ -64,7 +79,10 @@
       homeConfigurations = {
         connor = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./users/connor/home.nix ];
+          modules = [
+            dotflakes.homeManagerModules.emacs
+            ./users/connor/home.nix
+          ];
         };
       };
 
