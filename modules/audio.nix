@@ -7,6 +7,17 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.extraConfig."10-bluez-a2dp-only" = {
+      "monitor.bluez.properties" = {
+        # Keep Bluetooth audio devices on the stable high-quality audio path.
+        # The headset/HFP roles are what AirPods were using when the recent
+        # disconnect hit an A2DP suspend timeout and a stale BlueZ transport.
+        "bluez5.roles" = [
+          "a2dp_sink"
+          "a2dp_source"
+        ];
+      };
+    };
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 

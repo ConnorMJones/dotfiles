@@ -3,6 +3,12 @@
   programs.firefox = {
     enable = true;
 
+    # Do not let sites with Media Session handlers, such as YouTube, react to
+    # global media/seek keys while Firefox is not the focused app.
+    preferences = {
+      "media.hardwaremediakeys.enabled" = false;
+    };
+
     # about:policies
     policies = {
       # Disable Firefox Sync.

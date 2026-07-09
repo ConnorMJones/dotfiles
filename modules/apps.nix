@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, upkgs, ... }:
 {
   imports = [
     ./apps/anki.nix
@@ -11,16 +11,16 @@
     ./browsers/firefox.nix
     ./browsers/chrome.nix
   ];
-  environment.systemPackages = with pkgs; [
-    fastfetch
-    discord
-    element-desktop
-    obsidian
-    slack
-    flameshot
-    brave
-    libreoffice-qt
-    hunspell
-    sticky
+  environment.systemPackages = [
+    pkgs.fastfetch
+    upkgs.discord
+    pkgs.element-desktop
+    upkgs.obsidian
+    upkgs.slack
+    pkgs.flameshot
+    pkgs.brave
+    pkgs.libreoffice-qt
+    pkgs.hunspell
+    pkgs.sticky
   ];
 }

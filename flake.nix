@@ -2,7 +2,8 @@
   description = "flake configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixupkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
     {
       self,
       nixpkgs,
+      nixupkgs,
       stylix,
       home-manager,
       dotflakes,
@@ -43,6 +45,10 @@
         ./modules/xdg.nix
       ];
       pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      upkgs = import nixupkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
     in
     {
       nixpkgs.config.allowUnfree = true;
@@ -51,7 +57,9 @@
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           # access anything else in ... from glb build wide
-          specialArgs = glb;
+          specialArgs = glb // {
+            inherit upkgs;
+          };
           modules = common ++ [
             ./hosts/laptop/configuration.nix
             ./hosts/laptop/hardware-configuration.nix

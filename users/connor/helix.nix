@@ -10,15 +10,10 @@ in
   programs.helix = {
     package = pkgs.helix;
     enable = true;
-    defaultEditor = false;
+    defaultEditor = true;
 
     settings = {
       theme = "custom";
-      keys = {
-        normal = {
-          C-g = ":sh gitui";
-        };
-      };
 
       editor = {
         clipboard-provider = "wayland";
