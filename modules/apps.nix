@@ -5,7 +5,6 @@
     ./apps/steam.nix
     ./apps/zotero.nix
     ./apps/calibre.nix
-    ./apps/foliate.nix
     ./apps/1password.nix
     ./apps/video-editing.nix
     ./browsers/firefox.nix
