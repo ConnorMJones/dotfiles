@@ -72,6 +72,7 @@
             ./modules/keyboard.nix
             ./modules/dev.nix
             ./modules/services.nix
+            ./modules/rtl8852ce.nix
             stylix.nixosModules.stylix
           ];
         };
