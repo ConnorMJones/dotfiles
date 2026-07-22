@@ -7,6 +7,7 @@
     ./apps/calibre.nix
     ./apps/1password.nix
     ./apps/video-editing.nix
+    ./apps/todoist.nix
     ./browsers/firefox.nix
     ./browsers/chrome.nix
   ];
@@ -14,6 +15,7 @@
     pkgs.fastfetch
     upkgs.discord
     pkgs.element-desktop
+    pkgs.signal-desktop
     upkgs.obsidian
     upkgs.slack
     pkgs.flameshot
