@@ -42,6 +42,10 @@
       function claude-work
         CLAUDE_CONFIG_DIR=~/.claude-work claude $argv
       end
+
+      function codex-work
+        CODEX_HOME=~/.codex-work codex $argv
+      end
     '';
   };
 }

@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ upkgs, ... }:
 {
   environment.systemPackages = [
-    pkgs.claude-code
+    upkgs.claude-code
   ];
 }

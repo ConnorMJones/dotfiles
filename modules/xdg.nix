@@ -2,6 +2,7 @@
 {
   environment.sessionVariables = {
     CARGO_HOME = "$HOME/.local/share/cargo";
+    CARGO_BUILD_JOBS = "4";
     RUSTUP_HOME = "$HOME/.local/share/rustup";
     DOTNET_CLI_HOME = "$HOME/.local/share/dotnet";
 

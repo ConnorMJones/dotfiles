@@ -6,11 +6,18 @@
   services.tailscale = {
     enable = true;
     package = pkgs.tailscale;
-    extraSetFlags = ["--netfilter-mode=nodivert"];
+    extraSetFlags = [ "--netfilter-mode=nodivert" ];
     useRoutingFeatures = "client";
   };
 
   services.resolved.enable = true;
+  systemd.oomd.enableUserSlices = true;
+
+  nix.settings = {
+    max-jobs = 4;
+    cores = 4;
+  };
+
   # systemd.network.enable = true;
   networking.firewall.allowedTCPPorts = [ 8888 ];
   networking.firewall.checkReversePath = "loose";

@@ -20,6 +20,7 @@
     upkgs.slack
     pkgs.flameshot
     pkgs.brave
+    pkgs.librepods
     pkgs.libreoffice-qt
     pkgs.hunspell
     pkgs.sticky

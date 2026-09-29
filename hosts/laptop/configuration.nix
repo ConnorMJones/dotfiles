@@ -3,6 +3,7 @@
   environment.systemPackages = [
     pkgs.bluez
     pkgs.bluez-tools
+    pkgs.bpftune
   ];
   hardware.usb-modeswitch.enable = true;
 

@@ -5,6 +5,7 @@
     ./dev/typst.nix
     ./dev/docker.nix
     ./dev/claude.nix
+    ./dev/codex.nix
   ];
   environment.variables.EDITOR = "hx";
 
@@ -43,5 +44,6 @@
     ripgrep
     ripgrep-all
     poppler
+    zed-editor
   ];
 }
