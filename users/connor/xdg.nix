@@ -9,7 +9,6 @@
     download = "$HOME/downloads";
     publicShare = "$HOME/public";
     documents = "$HOME/documents";
-    music = "$HOME/music";
     pictures = "$HOME/pictures";
     videos = "$HOME/videos";
     templates = "$HOME";

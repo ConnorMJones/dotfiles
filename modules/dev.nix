@@ -6,6 +6,7 @@
     ./dev/docker.nix
     ./dev/claude.nix
     ./dev/codex.nix
+    ./dev/opencode.nix
   ];
   environment.variables.EDITOR = "hx";
 

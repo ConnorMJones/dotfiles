@@ -12,6 +12,12 @@
 
   services.resolved.enable = true;
   systemd.oomd.enableUserSlices = true;
+  systemd.coredump.settings.Coredump = {
+    ProcessSizeMax = "512M";
+    ExternalSizeMax = "512M";
+    MaxUse = "1G";
+    KeepFree = "4G";
+  };
 
   nix.settings = {
     max-jobs = 4;

@@ -1,0 +1,16 @@
+diff --git a/ble/blemanager.cpp b/ble/blemanager.cpp
+index 8e3b735..d16b2a1 100644
+--- a/ble/blemanager.cpp
++++ b/ble/blemanager.cpp
+@@ -85,7 +85,10 @@ QString connectionStateToString(BleInfo::ConnectionState state)
+ BleManager::BleManager(QObject *parent) : QObject(parent)
+ {
+     discoveryAgent = new QBluetoothDeviceDiscoveryAgent(this);
+-    discoveryAgent->setLowEnergyDiscoveryTimeout(0); // Continuous scanning
++    // Avoid leaving BlueZ discovery active indefinitely. Continuous discovery
++    // produces a steady stream of system D-Bus PropertiesChanged messages for
++    // every nearby BLE device, even when the AirPods are not present.
++    discoveryAgent->setLowEnergyDiscoveryTimeout(30'000);
+ 
+     connect(discoveryAgent, &QBluetoothDeviceDiscoveryAgent::deviceDiscovered,
+             this, &BleManager::onDeviceDiscovered);

@@ -26,6 +26,15 @@
     ACTION=="add|change", SUBSYSTEM=="usb", ATTR{idVendor}=="0bda", ATTR{idProduct}=="5852", TEST=="power/control", ATTR{power/control}="on", ATTR{power/autosuspend_delay_ms}="-1"
   '';
 
+  # S3 suspend on this machine wakes itself ~10s later, and logind re-suspends
+  # because the lid is still closed, looping all night and power-cycling the
+  # Bluetooth controller each time. Lock instead so background work keeps running.
+  services.logind.settings.Login = {
+    HandleLidSwitch = "lock";
+    HandleLidSwitchExternalPower = "lock";
+    HandleLidSwitchDocked = "ignore";
+  };
+
   boot.extraModprobeConfig = "options rtw89_core disable_ps_mode=Y";
 
   nix.settings.experimental-features = [

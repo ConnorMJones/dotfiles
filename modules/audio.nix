@@ -1,5 +1,18 @@
-{ ... }:
+{ pkgs, ... }:
+let
+  librepods = pkgs.librepods.overrideAttrs (previousAttrs: {
+    patches = (previousAttrs.patches or [ ]) ++ [
+      ./patches/librepods-bounded-ble-scan.patch
+    ];
+    postFixup = (previousAttrs.postFixup or "") + ''
+      wrapProgram $out/bin/librepods \
+        --unset QT_STYLE_OVERRIDE
+    '';
+  });
+in
 {
+  environment.systemPackages = [ librepods ];
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -18,9 +31,6 @@
         ];
       };
     };
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
